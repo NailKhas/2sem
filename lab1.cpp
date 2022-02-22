@@ -212,46 +212,18 @@ void linear_process(int particles[], unsigned int k, int n)
         move(particles, k, m, n);
         for (int i = 0; i < k; i++)
         {
-            if (particles[i * 3 + 2] != 0)
-            {
+            if (particles[i * 3 + 2] != 0) {
                 flag = true;
             }
-            //std::cout << particles[i * 3] << " " << particles[i * 3 + 1] << " " << particles[i * 3 + 2] << std::endl;
         }
-        //std::cout << std::endl;
-
-        /*for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                drawflag = false;
-                for (int l = 0; l < k; l++)
-                {
-                    if (particles[l * 3 + 1] == i * n + j)
-                    {
-                        drawflag = true;
-                    }
-                }
-                if (drawflag)
-                {
-                    std::cout << 0;
-                }
-                else
-                {
-                    std::cout << "+";
-                }
-            }
-            std::cout << std::endl;
-        }*/
     }
-    //std::cout << "movement ended////////////////////////////////////";
 }
 
 int main()
 {
-    int m = 50;//matrix[m*n]
-    int n = 50;
-    const int k = 2250;
+    int m = 10;//matrix[m*n]
+    int n = 10;
+    const int k = 80;
     int a;
     int particles[k * 3];//[number, position, moving(-1, -7, 1, 7 or 0 if not moving)]
     srand(time(0));
@@ -261,7 +233,3 @@ int main()
     }
     std::cout << "runtime = " << clock() / 1000.0 << std::endl; // время работы программы
     std::cout << "n = " << n << std::endl;
-
-
-
-}
